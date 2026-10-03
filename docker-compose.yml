@@ -1,0 +1,49 @@
+services:
+
+  app1:
+    build: ./app
+    container_name: mensagens-app1
+    environment:
+      INSTANCE_NAME: app1
+      TZ: America/Sao_Paulo
+    ports:
+      - "5001:5000"
+    volumes:
+      - mensagens_data:/app/data
+    networks:
+      - mensagens_network
+
+  app2:
+    build: ./app
+    container_name: mensagens-app2
+    environment:
+      INSTANCE_NAME: app2
+      TZ: America/Sao_Paulo
+    ports:
+      - "5002:5000"
+    volumes:
+      - mensagens_data:/app/data
+    networks:
+      - mensagens_network
+
+  app3:
+    build: ./app
+    container_name: mensagens-app3
+    environment:
+      INSTANCE_NAME: app3
+      TZ: America/Sao_Paulo
+    ports:
+      - "5003:5000"
+    volumes:
+      - mensagens_data:/app/data
+    networks:
+      - mensagens_network
+
+
+volumes:
+  mensagens_data:
+
+
+networks:
+  mensagens_network:
+    driver: bridge

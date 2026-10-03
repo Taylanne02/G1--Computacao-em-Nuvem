@@ -1,0 +1,26 @@
+# Ambiente virtual Python
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Dados locais da aplicação (mensagens e logs)
+data/
+*.log
+messages_*.json
+
+# Variáveis e segredos
+.env
+.env.*
+
+# Editores e sistema
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
